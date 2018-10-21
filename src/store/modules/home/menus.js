@@ -22,11 +22,11 @@ const state = {
       list: [
         {
           name: '省市区县',
-          url: "friends"
+          url: "cityLevel"
         },
         {
           name: '银行代码',
-          url: "friends"
+          url: "bankCode"
         },
       ]
     },
@@ -35,15 +35,15 @@ const state = {
       list: [
         {
           name: '添加/审核',
-          url: "friends"
+          url: "addAudits"
         },
         {
           name: '机构列表',
-          url: "friends"
+          url: "mechanismList"
         },
         {
           name: '合同管理',
-          url: "friends"
+          url: "contract"
         },
       ]
     },

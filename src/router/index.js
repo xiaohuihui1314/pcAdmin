@@ -15,6 +15,21 @@ const role = () =>
 // 用户管理
 const managementUser = () =>
   import ( /* webpackChunkName: "managementUser" */ '@/pages/management/user');
+// 省市区县
+const cityLevel = () =>
+  import ( /* webpackChunkName: "cityLevel" */ '@/pages/basicInformation/cityLevel');
+// 银行代码
+const bankCode = () =>
+  import ( /* webpackChunkName: "bankCode" */ '@/pages/basicInformation/bankCode');
+// 添加、审核
+const addAudits = () =>
+  import ( /* webpackChunkName: "addAudits" */ '@/pages/organizational/addAudits');
+// 机构列表
+const mechanismList = () =>
+  import ( /* webpackChunkName: "bankCode" */ '@/pages/organizational/mechanismList');
+// 合同管理
+const contract = () =>
+  import ( /* webpackChunkName: "contract" */ '@/pages/organizational/contract');
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -41,6 +56,31 @@ export default new Router({
           path: '/managementUser',
           name: '用户管理',
           component: managementUser
+        },
+        {
+          path: '/cityLevel',
+          name: '省市区县',
+          component: cityLevel
+        },
+        {
+          path: '/bankCode',
+          name: '银行代码',
+          component: bankCode
+        },
+        {
+          path: '/addAudits',
+          name: '添加/审核',
+          component: addAudits
+        },
+        {
+          path: '/mechanismList',
+          name: '机构列表',
+          component: mechanismList
+        },
+        {
+          path: '/contract',
+          name: '合同管理',
+          component: contract
         },
       ]
     }
