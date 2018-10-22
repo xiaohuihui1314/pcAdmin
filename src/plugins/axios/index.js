@@ -2,12 +2,13 @@ import axios from 'axios';
 import Vue from 'vue';
 import config from '../../config/service'
 
-export const httpGet = (url, headers = {}) => {
+export const httpGet = (url, params, headers = {}) => {
   return axios({
     url: url,
+    params: params,
     method: 'get',
     headers: {
-      token: Vue.prototype.$session.get('token').token,
+      token: Vue.prototype.$localStorage.get('token').token,
       ...headers
     },
   })
@@ -18,7 +19,7 @@ export const httpPut = (url, params, headers = {}) => {
     method: 'put',
     params: params,
     headers: {
-      token: Vue.prototype.$session.get('token').token,
+      token: Vue.prototype.$localStorage.get('token').token,
       ...headers
     },
     transformRequest: [(data) => {
@@ -32,7 +33,7 @@ export const httpDelete = (url, params, headers = {}) => {
     method: 'delete',
     params: params,
     headers: {
-      token: Vue.prototype.$session.get('token').token,
+      token: Vue.prototype.$localStorage.get('token').token,
       ...headers
     },
     transformRequest: [(data) => {
@@ -46,7 +47,7 @@ export const httpPost = (url, params, headers = {}, doTransformRequest = true) =
     method: 'post',
     data: params,
     headers: {
-      token: Vue.prototype.$session.get('token').token || '',
+      token: Vue.prototype.$localStorage.get('token').token || '',
       ...headers
     },
     transformRequest: [(data) => {

@@ -56,7 +56,7 @@
 </script>
 <style scoped lang="scss">
   .menu-wrap {
-    width: 260px;
+    width: 260px !important;
     background-color: rgba(59, 58, 63, 1) !important;
     & > img {
       display: block;

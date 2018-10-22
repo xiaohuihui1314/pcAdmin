@@ -1,5 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+// 登录页
+const login = () =>
+  import ( /* webpackChunkName: "login" */ '@/pages/login');
+// 注册
+const register = () =>
+  import ( /* webpackChunkName: "register" */ '@/pages/login/register');
 // 首页
 const home = () =>
   import ( /* webpackChunkName: "home" */ '@/pages/home');
@@ -33,6 +39,16 @@ const contract = () =>
 Vue.use(Router)
 export default new Router({
   routes: [
+    {
+      path: '/login',
+      name: '登录',
+      component: login,
+    },
+    {
+      path: '/register',
+      name: '注册',
+      component: register,
+    },
     {
       path: '/',
       component: home,
