@@ -1,4 +1,6 @@
 import {httpGet, httpPost, httpPut, httpDelete} from './axios';
+import x2js from 'x2js';
+import jsencrypt from 'jsencrypt';
 export default {
   install (Vue) {
     // 请求方式
@@ -6,7 +8,10 @@ export default {
     Vue.prototype.$post = httpPost; //post请求
     Vue.prototype.$put = httpPut; //put请求
     Vue.prototype.$delete = httpDelete; //put请求
-   
+  
+    Vue.prototype.jsencrypt = new jsencrypt();
+    // xml转json
+    Vue.prototype.$xmlJSON = new x2js();
     // 本地存储
     // localStorage封装
     Vue.prototype.$localStorage = {

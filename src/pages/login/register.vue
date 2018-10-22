@@ -25,6 +25,7 @@
 </style>
 <script>
   import codeKey from '@/util/verycode-key';
+  import jsencrypt from '@/util/jsencrypt';
   export default {
     data () {
       return {
@@ -37,11 +38,12 @@
           pwd_repeat: "huihui3210",
           verify_code: "191119",
         },
-        message: null
+        dateData: {}
       }
     },
     mounted(){
       //      this.geCode();
+      this.getDate();
     },
     methods: {
       async  geCode () {
@@ -58,9 +60,17 @@
         console.log(res)
       },
       async  geRegister () {
+          Object.assign(this.registerObj,{
+            pwd: jsencrypt.getUrlpwd('huihui3210', this.dateData.datetime, this.jsencrypt),
+            pwd_repeat: jsencrypt.getUrlpwd('huihui3210', this.dateData.datetime, this.jsencrypt),
+          });
         const res = await  this.$get('/create_user_info.cgi', this.registerObj);
         console.log(res)
       },
+      async getDate(){
+        const res = await  this.$post('get_datetime.cgi');
+        this.dateData = this.$xmlJSON.xml2js(res).root;
+      }
     }
   }
 </script>
