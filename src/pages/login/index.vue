@@ -30,8 +30,8 @@
       return {
         login: {
           server_no: 100004,
-          uin: "17671676150",
-          pwd: "huihui3210"
+          uin: "",
+          pwd: ""
         },
         message: null,
         dateData: {}
@@ -43,14 +43,19 @@
     methods: {
       async  goLogin () {
         Object.assign(this.login, {
-          pwd: jsencrypt.getUrlpwd('huihui3210', this.dateData.datetime, this.jsencrypt),
+          pwd: jsencrypt.getUrlpwd(this.login.pwd, this.dateData.datetime, this.jsencrypt),
         });
         const res = await  this.$get('/user_login.cgi', this.login);
-        console.log(this.$xmlJSON.xml2js(res).root)
+        if (res.errormessage === 'OK') {
+          this.$localStorage.set('user', res);
+          this.$router.push("/");
+        } else {
+          this.$message(res.errormessage);
+        }
+        console.log(res)
       },
       async getDate(){
-        const res = await  this.$post('get_datetime.cgi');
-        this.dateData = this.$xmlJSON.xml2js(res).root;
+        this.dateData = await  this.$post('get_datetime.cgi');
       }
     }
   }

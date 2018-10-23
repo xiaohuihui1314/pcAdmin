@@ -7,10 +7,7 @@ const state = {
           name: '用户权限',
           url: "user"
         },
-        {
-          name: '角色权限',
-          url: "role"
-        },
+        
       ]
     },
     {

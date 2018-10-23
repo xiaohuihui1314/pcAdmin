@@ -2,7 +2,7 @@
   <div>
     <section class="toolbar-wrap">
       <div class="search">
-        <el-input class="search-input" v-model="search" placeholder="请输入内容"></el-input>
+        <el-input class="search-input" v-model="query.name" placeholder="请输入账号搜索"></el-input>
         <button class="search-btn" @click="searchEvent">搜索</button>
       </div>
       <div class="lef-btn-wrap">
@@ -57,10 +57,11 @@
     <el-dialog
       title="添加用户"
       :visible.sync="dialogVisible"
-      width="500px"
+      :width="dialogWidth"
       custom-class="modal-wrap"
       :before-close="handleClose">
-      <el-form ref="form" :model="form" label-width="80px">
+      <!--注册用户-->
+      <el-form ref="form" :model="form" label-width="80px" v-if="modalState">
         <el-form-item label="账号">
           <el-input v-model="form.account"></el-input>
         </el-form-item>
@@ -87,64 +88,89 @@
           <el-button @click="handleClose">取消</el-button>
         </el-form-item>
       </el-form>
+      <div v-if="!modalState">
+        <div class="tree-wrap" v-for="(item, index) in accessList" :key="index">
+          <el-checkbox class="tree-checkbox" v-model="item.checked" @change="reverseSelection(item,index)">{{item.name}}
+          </el-checkbox>
+          <div class="tree-box clear">
+            <div class="tree-item" v-for="(item1, index1) in item.children" :key="index1">
+              <el-checkbox class="tree-checkbox" v-model="item1.checked" @change="selectTree(item1,index)">{{item1.name}}</el-checkbox>
+              <div class="tree-box clear">
+                <div class="tree-item" v-for="(item2, index2) in item1.children" :key="index2">
+                  <el-checkbox class="tree-checkbox" v-model="item2.checked" @change="selectTree(item2,index,item1)">
+                    {{item2.name}}
+                  </el-checkbox>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <el-button type="primary" @click="getList">获取</el-button>
+      </div>
     </el-dialog>
+
   </div>
 </template>
 
 <script>
+  import access from '@/config/access';
   export default {
     data(){
       return {
         search: '',
-        tableData: [{
-          id: '100',
-          account: '100',
-          name: 'admin',
-          role: '超级管理员',
-          state: '开始',
-          date: '2016-05-02',
-        }, {
-          id: '100',
-          account: '100',
-          name: 'admin',
-          role: '超级管理员',
-          state: '开始',
-          date: '2016-05-02',
-        }, {
-          id: '100',
-          account: '100',
-          name: 'admin',
-          role: '超级管理员',
-          state: '开始',
-          date: '2016-05-02',
-        }, {
-          id: '100',
-          account: '100',
-          name: 'admin',
-          role: '超级管理员',
-          state: '开始',
-          date: '2016-05-02',
-        }, {
-          id: '100',
-          account: '100',
-          name: 'admin',
-          role: '超级管理员',
-          state: '开始',
-          date: '2016-05-02',
-        },],
+        tableData: [],
+        dialogWidth: '500px',
         dialogVisible: false,
+        modalState: false,
         form: {
           account: '',
           name: '',
           password: '',
           role: '',
           state: ''
-        }
+        },
+        query: {
+          server_no: '503301',
+          limit: 10,
+          name: ''
+        },
+        accessList: access.list
       }
     },
+    mounted(){
+      console.log(this.accessList);
+      this.getUserList();
+    },
     methods: {
+      async getUserList(){
+        const res = await  this.$get('/qry_jifen_user_list.cgi', this.query);
+        console.log(res)
+      },
+      getList(){
+        console.log(this.accessList);
+      },
+      reverseSelection(item, index){
+        if (!item.checked) {
+          this.accessList[index].children.map(i => {
+            i.checked = false;
+            i.children && i.children.map(o => {
+              o.checked = false;
+            });
+          })
+        }
+      },
+      selectTree(item, index, parentItem){
+        if (item.checked && index) {
+          this.accessList[index].checked = true;
+        }
+        if (parentItem) {
+          parentItem.checked = true;
+          this.accessList[index].checked = true;
+        }
+        console.log(item, index)
+      },
       searchEvent(){
-        console.log('搜索')
+        this.getUserList();
       },
       editClick(item){
         Object.assign(this.form, item);
@@ -181,7 +207,7 @@
         this.dialogVisible = false;
       },
       onSubmit(){
-        console.log(this.form)
+        this.modalState = false;
       }
     }
   };
@@ -229,6 +255,17 @@
     margin-top: 25px;
   }
 
+  .tree-box {
+    margin-left: 25px;
+    .tree-item {
+      float: left;
+      width: 50%;
+    }
+  }
+
+  .tree-wrap, .tree-checkbox {
+    margin-bottom: 5px;
+  }
 </style>
 <style>
   .search-input input {

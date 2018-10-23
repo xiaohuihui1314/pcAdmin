@@ -63,6 +63,10 @@
       checkRouter(){
         if (!this.thirdClass.name) {
           this.$store.dispatch('Action_Menu_Name', null);
+        } else {
+          if (this.menuList.length) {
+            this.activeName = this.menuList[0].name
+          }
         }
       },
       handleClick(tab) {

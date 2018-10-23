@@ -1,0 +1,242 @@
+{
+  "list": [
+    {
+      "name": "管理员",
+      "index": "1",
+      "checked": false,
+      "children": [
+        {
+          "name": "用户权限",
+          "index": "2",
+          "checked": false,
+          "children": [
+            {
+              "name": "查看",
+              "index": "3",
+              "checked": false
+            },
+            {
+              "name": "编辑",
+              "index": "4",
+              "checked": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "用户管理",
+      "index": "5",
+      "checked": false,
+      "children": [
+        {
+          "name": "查看",
+          "index": "6",
+          "checked": false
+        },
+        {
+          "name": "编辑",
+          "index": "7",
+          "checked": false
+        }
+      ]
+    },
+    {
+      "name": "基础资料",
+      "index": "8",
+      "checked": false,
+      "children": [
+        {
+          "name": "省市区县",
+          "checked": false,
+          "children": [
+            {
+              "name": "查看",
+              "index": "9",
+              "checked": false
+            },
+            {
+              "name": "编辑",
+              "index": "10",
+              "checked": false
+            }
+          ]
+        },
+        {
+          "name": "银行代码",
+          "checked": false,
+          "children": [
+            {
+              "name": "查看",
+              "index": "11",
+              "checked": false
+            },
+            {
+              "name": "编辑",
+              "index": "12",
+              "checked": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "机构管理",
+      "index": "13",
+      "checked": false,
+      "children": [
+        {
+          "name": "添加/审核",
+          "checked": false,
+          "children": [
+            {
+              "name": "查看",
+              "index": "14",
+              "checked": false
+            },
+            {
+              "name": "编辑",
+              "index": "15",
+              "checked": false
+            }
+          ]
+        },
+        {
+          "name": "机构列表",
+          "checked": false,
+          "children": [
+            {
+              "name": "查看",
+              "index": "16",
+              "checked": false
+            },
+            {
+              "name": "编辑",
+              "index": "17",
+              "checked": false
+            }
+          ]
+        },
+        {
+          "name": "合同管理",
+          "checked": false,
+          "children": [
+            {
+              "name": "查看",
+              "index": "18",
+              "checked": false
+            },
+            {
+              "name": "编辑",
+              "index": "19",
+              "checked": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "客户管理",
+      "index": "20",
+      "checked": false,
+      "children": [
+        {
+          "name": "添加/审核",
+          "checked": false,
+          "children": [
+            {
+              "name": "查看",
+              "index": "21",
+              "checked": false
+            },
+            {
+              "name": "编辑",
+              "index": "22",
+              "checked": false
+            }
+          ]
+        },
+        {
+          "name": "商户列表",
+          "checked": false,
+          "children": [
+            {
+              "name": "查看",
+              "index": "23",
+              "checked": false
+            },
+            {
+              "name": "编辑",
+              "index": "24",
+              "checked": false
+            }
+          ]
+        },
+        {
+          "name": "福利发放",
+          "checked": false,
+          "children": [
+            {
+              "name": "查看",
+              "index": "25",
+              "checked": false
+            },
+            {
+              "name": "编辑",
+              "index": "26",
+              "checked": false
+            }
+          ]
+        },
+        {
+          "name": "发放审核",
+          "checked": false,
+          "children": [
+            {
+              "name": "查看",
+              "index": "27",
+              "checked": false
+            },
+            {
+              "name": "编辑",
+              "index": "28",
+              "checked": false
+            }
+          ]
+        },
+        {
+          "name": "合同管理",
+          "checked": false,
+          "children": [
+            {
+              "name": "查看",
+              "index": "29",
+              "checked": false
+            },
+            {
+              "name": "编辑",
+              "index": "30",
+              "checked": false
+            }
+          ]
+        },
+        {
+          "name": "结算管理",
+          "checked": false,
+          "children": [
+            {
+              "name": "查看",
+              "index": "31",
+              "checked": false
+            },
+            {
+              "name": "编辑",
+              "index": "32",
+              "checked": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
