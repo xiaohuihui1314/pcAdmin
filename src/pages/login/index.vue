@@ -48,9 +48,9 @@
         const res = await  this.$get('/user_login.cgi', this.login);
         if (res.errormessage === 'OK') {
           this.$localStorage.set('user', res);
-          this.$router.push("/");
+//          this.$router.push("/");
         } else {
-          this.$message(res.errormessage);
+//          this.$message(res.errormessage);
         }
         console.log(res)
       },

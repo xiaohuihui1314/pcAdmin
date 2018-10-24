@@ -147,7 +147,20 @@
         console.log(res)
       },
       getList(){
-        console.log(this.accessList);
+        const array = [];
+        this.accessList.map(item => {
+          const a = i => {
+            if (i.index) {
+              if (i.checked) {
+                array[i.index - 1] = 1
+              } else {
+                array[i.index - 1] = 0
+              }
+            }
+            i.children && i.children.map(a)
+          };
+          a(item);
+        });
       },
       reverseSelection(item, index){
         if (!item.checked) {
@@ -167,7 +180,6 @@
           parentItem.checked = true;
           this.accessList[index].checked = true;
         }
-        console.log(item, index)
       },
       searchEvent(){
         this.getUserList();

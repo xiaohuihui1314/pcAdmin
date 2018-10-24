@@ -2,22 +2,22 @@
   "list": [
     {
       "name": "管理员",
-      "index": "1",
+      "index": 1,
       "checked": false,
       "children": [
         {
           "name": "用户权限",
-          "index": "2",
+          "index": 2,
           "checked": false,
           "children": [
             {
               "name": "查看",
-              "index": "3",
+              "index": 3,
               "checked": false
             },
             {
               "name": "编辑",
-              "index": "4",
+              "index": 4,
               "checked": false
             }
           ]
@@ -26,24 +26,24 @@
     },
     {
       "name": "用户管理",
-      "index": "5",
+      "index": 5,
       "checked": false,
       "children": [
         {
           "name": "查看",
-          "index": "6",
+          "index": 6,
           "checked": false
         },
         {
           "name": "编辑",
-          "index": "7",
+          "index": 7,
           "checked": false
         }
       ]
     },
     {
       "name": "基础资料",
-      "index": "8",
+      "index": 8,
       "checked": false,
       "children": [
         {
@@ -52,12 +52,12 @@
           "children": [
             {
               "name": "查看",
-              "index": "9",
+              "index": 9,
               "checked": false
             },
             {
               "name": "编辑",
-              "index": "10",
+              "index": 10,
               "checked": false
             }
           ]
@@ -68,12 +68,12 @@
           "children": [
             {
               "name": "查看",
-              "index": "11",
+              "index": 11,
               "checked": false
             },
             {
               "name": "编辑",
-              "index": "12",
+              "index": 12,
               "checked": false
             }
           ]
@@ -82,7 +82,7 @@
     },
     {
       "name": "机构管理",
-      "index": "13",
+      "index": 13,
       "checked": false,
       "children": [
         {
@@ -91,12 +91,12 @@
           "children": [
             {
               "name": "查看",
-              "index": "14",
+              "index": 14,
               "checked": false
             },
             {
               "name": "编辑",
-              "index": "15",
+              "index": 15,
               "checked": false
             }
           ]
@@ -107,12 +107,12 @@
           "children": [
             {
               "name": "查看",
-              "index": "16",
+              "index": 16,
               "checked": false
             },
             {
               "name": "编辑",
-              "index": "17",
+              "index": 17,
               "checked": false
             }
           ]
@@ -123,12 +123,12 @@
           "children": [
             {
               "name": "查看",
-              "index": "18",
+              "index": 18,
               "checked": false
             },
             {
               "name": "编辑",
-              "index": "19",
+              "index": 19,
               "checked": false
             }
           ]
@@ -137,7 +137,7 @@
     },
     {
       "name": "客户管理",
-      "index": "20",
+      "index": 20,
       "checked": false,
       "children": [
         {
@@ -146,12 +146,12 @@
           "children": [
             {
               "name": "查看",
-              "index": "21",
+              "index": 21,
               "checked": false
             },
             {
               "name": "编辑",
-              "index": "22",
+              "index": 22,
               "checked": false
             }
           ]
@@ -162,12 +162,12 @@
           "children": [
             {
               "name": "查看",
-              "index": "23",
+              "index": 23,
               "checked": false
             },
             {
               "name": "编辑",
-              "index": "24",
+              "index": 24,
               "checked": false
             }
           ]
@@ -178,12 +178,12 @@
           "children": [
             {
               "name": "查看",
-              "index": "25",
+              "index": 25,
               "checked": false
             },
             {
               "name": "编辑",
-              "index": "26",
+              "index": 26,
               "checked": false
             }
           ]
@@ -194,12 +194,12 @@
           "children": [
             {
               "name": "查看",
-              "index": "27",
+              "index": 27,
               "checked": false
             },
             {
               "name": "编辑",
-              "index": "28",
+              "index": 28,
               "checked": false
             }
           ]
@@ -210,12 +210,12 @@
           "children": [
             {
               "name": "查看",
-              "index": "29",
+              "index": 29,
               "checked": false
             },
             {
               "name": "编辑",
-              "index": "30",
+              "index": 30,
               "checked": false
             }
           ]
@@ -226,13 +226,37 @@
           "children": [
             {
               "name": "查看",
-              "index": "31",
+              "index": 31,
               "checked": false
             },
             {
               "name": "编辑",
-              "index": "32",
-              "checked": false
+              "index": 32,
+              "checked": false,
+              "children": [
+                {
+                  "name": "查看",
+                  "index": 33,
+                  "checked": false
+                },
+                {
+                  "name": "编辑",
+                  "index": 34,
+                  "checked": true,
+                  "children": [
+                    {
+                      "name": "查看",
+                      "index": 35,
+                      "checked": false
+                    },
+                    {
+                      "name": "编辑",
+                      "index": 36,
+                      "checked": true
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }

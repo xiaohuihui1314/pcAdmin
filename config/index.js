@@ -14,6 +14,9 @@ module.exports = {
       '/cgi-bin': {
         target: 'https://jf21.cucpay.net',
         changeOrigin: true,
+        pathRewrite: {
+          '^/cgi-bin': '/cgi-bin'
+        }
       }
     },
 
