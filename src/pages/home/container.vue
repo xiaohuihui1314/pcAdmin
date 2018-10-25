@@ -65,12 +65,13 @@
           this.$store.dispatch('Action_Menu_Name', null);
         } else {
           if (this.menuList.length) {
-            this.activeName = this.menuList[0].name
+            this.activeName = this.thirdClass.name
           }
         }
       },
       handleClick(tab) {
         const selectTab = this.menuList.filter(i => i.name === tab.name);
+        console.log(selectTab)
         this.$router.push({ path: selectTab[0].url });
       }
     }

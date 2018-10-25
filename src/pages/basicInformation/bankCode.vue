@@ -181,30 +181,7 @@
 </script>
 <style lang="scss" scoped>
   .toolbar-wrap {
-    .search {
-      float: left;
-      width: 250px;
-      .search-input {
-        float: left;
-        width: 200px;
-        border-radius: 4px 0 0 4px;
-        input {
-          border-radius: 0;
-        }
-      }
-      button {
-        float: left;
-        width: 50px;
-        height: 40px;
-        line-height: 40px;
-        border: none;
-        border-radius: 0 4px 4px 0;
-        background-color: #0099ff;
-        color: #fff;
-      }
-    }
     .lef-btn-wrap {
-      float: right;
       button {
         width: 100px;
         height: 40px;

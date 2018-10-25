@@ -183,10 +183,21 @@
           password: '',
           role: '',
           state: ''
+        },
+        query:{
+          uid:'',
+          user_limit:''
         }
       }
     },
+    mounted(){
+      this.getUserList();
+    },
     methods: {
+      async getUserList(){
+        const res = await  this.$post('/update_jifen_user_limit', this.query);
+        console.log(res)
+      },
       searchEvent(){
         console.log('搜索')
       },
