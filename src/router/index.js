@@ -36,7 +36,25 @@ const mechanismList = () =>
 // 合同管理
 const contract = () =>
   import ( /* webpackChunkName: "contract" */ '@/pages/organizational/contract');
-Vue.use(Router)
+// 商户管理-添加审核
+const businessAddAudits = () =>
+  import ( /* webpackChunkName: "businessAddAudits" */ '@/pages/business/addAudits');
+// 商户管理-商户列表
+const businessList = () =>
+  import ( /* webpackChunkName: "businessList" */ '@/pages/business/businessList');
+// 商户管理-福利发放
+const welfareGrant = () =>
+  import ( /* webpackChunkName: "welfareGrant" */ '@/pages/business/welfareGrant');
+// 商户管理-发放审核
+const issuanceAudit = () =>
+  import ( /* webpackChunkName: "issuanceAudit" */ '@/pages/business/issuanceAudit');
+// 商户管理-合同管理
+const businessContract = () =>
+  import ( /* webpackChunkName: "businessContract" */ '@/pages/business/businessContract');
+// 商户管理-结算管理
+const settlement = () =>
+  import ( /* webpackChunkName: "settlement" */ '@/pages/business/settlement');
+Vue.use(Router);
 export default new Router({
   routes: [
     {
@@ -97,6 +115,36 @@ export default new Router({
           path: '/contract',
           name: '合同管理',
           component: contract
+        },
+        {
+          path: '/businessAddAudits',
+          name: '添加/审核 ',
+          component: businessAddAudits
+        },
+        {
+          path: '/businessList',
+          name: '商户列表',
+          component: businessList
+        },
+        {
+          path: '/welfareGrant',
+          name: '福利发放',
+          component: welfareGrant
+        },
+        {
+          path: '/issuanceAudit',
+          name: '发放审核',
+          component: issuanceAudit
+        },
+        {
+          path: '/businessContract',
+          name: '合同管理 ',
+          component: businessContract
+        },
+        {
+          path: '/settlement',
+          name: '结算管理',
+          component: settlement
         },
       ]
     }

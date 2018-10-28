@@ -48,28 +48,28 @@ const state = {
       name: '商户管理',
       list: [
         {
-          name: '添加/审核',
-          url: "friends"
+          name: '添加/审核 ',
+          url: "businessAddAudits"
         },
         {
           name: '商户列表',
-          url: "friends"
+          url: "businessList"
         },
         {
           name: '福利发放',
-          url: "friends"
+          url: "welfareGrant"
         },
         {
           name: '发放审核',
-          url: "friends"
+          url: "issuanceAudit"
         },
         {
-          name: '合同管理',
-          url: "friends"
+          name: '合同管理 ',
+          url: "businessContract"
         },
         {
           name: '结算管理',
-          url: "friends"
+          url: "settlement"
         },
       ]
     },
