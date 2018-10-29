@@ -280,7 +280,7 @@
         line-height: 40px;
         border: none;
         border-radius: 4px;
-        background-color: #00cc00;
+        background-color: #00a9c6;
         color: #fff;
       }
     }

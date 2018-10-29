@@ -10,31 +10,17 @@
       :data="tableData"
       stripe
       style="width: 100%">
-      <el-table-column
-        prop="id"
-        label="ID">
-      </el-table-column>
-      <el-table-column
-        prop="account"
-        label="管理账号">
-      </el-table-column>
+
       <el-table-column
         prop="name"
-        label="真实姓名">
+        label="银行名称">
       </el-table-column>
       <el-table-column
-        prop="role"
-        label="角色">
+        prop="code"
+        label="银行代码">
       </el-table-column>
       <el-table-column
-        prop="state"
-        label="账号状态">
-      </el-table-column>
-      <el-table-column
-        prop="date"
-        label="创建时间">
-      </el-table-column>
-      <el-table-column
+        width="100"
         label="操作">
         <template slot-scope="scope">
           <el-button @click="editClick(scope.row)" type="text" size="small">编辑</el-button>
@@ -49,34 +35,18 @@
       layout="prev, pager, next, sizes, jumper"
       :total="1000">
     </el-pagination>
-    <!--添加角色-->
     <el-dialog
-      title="添加角色"
+      title="添加银行"
       :visible.sync="dialogVisible"
       width="500px"
       custom-class="modal-wrap"
       :before-close="handleClose">
-      <el-form ref="form" :model="form" label-width="80px">
-        <el-form-item label="账号">
-          <el-input v-model="form.account"></el-input>
-        </el-form-item>
-        <el-form-item label="真实姓名">
+      <el-form ref="form" :model="form" label-width="100px">
+        <el-form-item label="银行名称：">
           <el-input v-model="form.name"></el-input>
         </el-form-item>
-        <el-form-item label="密码">
-          <el-input v-model="form.password"></el-input>
-        </el-form-item>
-        <el-form-item label="角色">
-          <el-select v-model="form.role" placeholder="请选择一个角色">
-            <el-option label="销售" value="shanghai"></el-option>
-            <el-option label="客服" value="beijing"></el-option>
-          </el-select>
-        </el-form-item>
-        <el-form-item label="账号状态">
-          <el-radio-group v-model="form.state">
-            <el-radio label="1">开始</el-radio>
-            <el-radio label="0">关闭</el-radio>
-          </el-radio-group>
+        <el-form-item label="银行代码：">
+          <el-input v-model="form.code"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="onSubmit">添加</el-button>
@@ -93,40 +63,17 @@
       return {
         search: '',
         tableData: [{
-          id: '100',
-          account: '100',
-          name: 'admin',
-          role: '超级管理员',
-          state: '开始',
-          date: '2016-05-02',
-        }, {
-          id: '100',
-          account: '100',
-          name: 'admin',
-          role: '超级管理员',
-          state: '开始',
-          date: '2016-05-02',
-        }, {
-          id: '100',
-          account: '100',
-          name: 'admin',
-          role: '超级管理员',
-          state: '开始',
-          date: '2016-05-02',
-        }, {
-          id: '100',
-          account: '100',
-          name: 'admin',
-          role: '超级管理员',
-          state: '开始',
-          date: '2016-05-02',
-        }, {
-          id: '100',
-          account: '100',
-          name: 'admin',
-          role: '超级管理员',
-          state: '开始',
-          date: '2016-05-02',
+          name: '中国银行',
+          code: '10ASDasdAA',
+        },{
+          name: '中国银行1',
+          code: '10ASDasdAAsa',
+        },{
+          name: '中国银行2',
+          code: '10ASDasdAAs',
+        },{
+          name: '中国银行3',
+          code: '10ASDasdAAd',
         },],
         dialogVisible: false,
         form: {
@@ -188,7 +135,7 @@
         line-height: 40px;
         border: none;
         border-radius: 4px;
-        background-color: #00cc00;
+        background-color: #00a9c6;
         color: #fff;
       }
     }

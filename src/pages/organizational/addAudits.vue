@@ -10,15 +10,6 @@
           :value="item.value">
         </el-option>
       </el-select>
-      <label>审核状态：</label>
-      <el-select v-model="searchObj.auditingState" placeholder="请选择">
-        <el-option
-          v-for="item in options2"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value">
-        </el-option>
-      </el-select>
       <label>注册时间：</label>
       <el-date-picker
         v-model="searchObj.time"
@@ -27,10 +18,8 @@
         start-placeholder="开始日期"
         end-placeholder="结束日期">
       </el-date-picker>
-      <div class="search">
-        <el-input class="search-input" v-model="searchObj.search" placeholder="请输入内容"></el-input>
-        <button class="search-btn" @click="searchEvent">搜索</button>
-      </div>
+      <el-button type="primary" >类型管理</el-button>
+      <el-button type="primary" @click="addUsers">添加机构</el-button>
     </section>
     <!--表格-->
     <el-table
@@ -83,27 +72,24 @@
       width="500px"
       custom-class="modal-wrap"
       :before-close="handleClose">
-      <el-form ref="form" :model="form" label-width="80px">
-        <el-form-item label="账号">
-          <el-input v-model="form.account"></el-input>
-        </el-form-item>
-        <el-form-item label="真实姓名">
-          <el-input v-model="form.name"></el-input>
-        </el-form-item>
-        <el-form-item label="密码">
+      <el-form ref="form" :model="form" label-width="120px">
+
+        <el-form-item label="机构名称：">
           <el-input v-model="form.password"></el-input>
         </el-form-item>
-        <el-form-item label="角色">
-          <el-select v-model="form.role" placeholder="请选择一个角色">
+        <el-form-item label="机构类型：">
+          <el-select v-model="form.role" placeholder="请选择">
             <el-option label="销售" value="shanghai"></el-option>
             <el-option label="客服" value="beijing"></el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="账号状态">
-          <el-radio-group v-model="form.state">
-            <el-radio label="1">开始</el-radio>
-            <el-radio label="0">关闭</el-radio>
-          </el-radio-group>
+        <el-form-item label="兑换规则：">
+          <el-row :gutter="20">
+            <el-col :span="12"> <el-input v-model="form.password"></el-input></el-col>
+            <el-col :span="12"><el-input v-model="form.password"></el-input></el-col>
+          </el-row>
+
+
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="onSubmit">添加</el-button>
@@ -231,31 +217,6 @@
   };
 </script>
 <style lang="scss" scoped>
-  .toolbar-wrap {
-    .search {
-      float: right;
-      width: 250px;
-      .search-input {
-        float: left;
-        width: 200px;
-        border-radius: 4px 0 0 4px;
-        input {
-          border-radius: 0;
-        }
-      }
-      button {
-        float: left;
-        width: 50px;
-        height: 40px;
-        line-height: 40px;
-        border: none;
-        border-radius: 0 4px 4px 0;
-        background-color: #0099ff;
-        color: #fff;
-      }
-    }
-  }
-
   .pagination-wrap {
     float: right;
     margin-top: 25px;
